@@ -52,7 +52,7 @@ class Solution
         
     /*    int pivot=arr[high];
         int i = low-1;
-                                      //I have done this using LOMUTO PARTITION
+                                      // LOMUTO PARTITION
         for(int j=low;j<=high-1;j++)
         {
             if(arr[j] < pivot)
@@ -78,7 +78,7 @@ class Solution
             do{
                 i++;
                 
-            }while(arr[i] < pivot);
+            }while(arr[i] < pivot);                //HOARSE PARTITION
             do{
                 j--;
             }   while(arr[j] > pivot);
