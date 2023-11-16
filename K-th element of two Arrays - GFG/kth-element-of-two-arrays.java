@@ -79,19 +79,6 @@ class Solution {
             ind++;
         }
         
-       // System.out.println(Arrays.toString(temp));
-        
-    //    int ans = Integer.MIN_VALUE;
-      
-   /*   for(int z=1;z<=temp.length;z++)
-      {
-         if(z == k)
-         {
-             ans = temp[z];
-             break;
-         }
-      }*/
-        
         return temp[k-1];
         
     }
