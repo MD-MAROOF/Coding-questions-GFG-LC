@@ -1,9 +1,8 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
         
-        
-        boolean[] rows = new boolean[matrix.length];
-        boolean[] cols = new boolean[matrix[0].length];
+          boolean[] rows = new boolean[matrix.length];
+          boolean[] cols = new boolean[matrix[0].length];
         
         for(int i=0;i<rows.length;i++)
         {
@@ -17,12 +16,12 @@ class Solution {
             }
         }
         
+        
         for(int i=0;i<rows.length;i++)
         {
             for(int j=0;j<cols.length;j++)
             {
-                if(rows[i] || cols[j])
-                {
+                if(rows[i] || cols[j]){
                     matrix[i][j] = 0;
                 }
             }
