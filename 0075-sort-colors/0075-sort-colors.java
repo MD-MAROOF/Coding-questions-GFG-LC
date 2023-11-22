@@ -1,39 +1,68 @@
 class Solution {
     public void sortColors(int[] nums) {
+        int low = 0,high = nums.length-1;
+        mergeSort(nums,low,high);
         
-        int low = 0;
-        int high = nums.length-1;
-        quickSort(nums,low,high);
     }
     
-    void quickSort(int[] arr, int low, int high)
+    void mergeSort(int[] nums,int low,int high)
     {
-        if(low < high)
+        if(high > low)
         {
-            int pivot = partition(arr,low,high);
-            quickSort(arr,low,pivot);
-            quickSort(arr,pivot+1,high);
+            int mid = low+(high-low)/2;
+            mergeSort(nums,low,mid);
+            mergeSort(nums,mid+1,high);
+            merge(nums,low,mid,high);
         }
     }
     
-    int partition(int[] arr, int low, int high)
+    void merge(int[] arr, int low,int mid, int high)
     {
-     int pivot = arr[low];
-        int i=low-1,j=high+1;
+        int n1 = mid-low+1;
+        int n2 = high-mid;
         
-        while(true)
+        int[] left = new int[n1];
+        int[] right = new int[n2];
+        
+        for(int i=0;i<n1;i++)
         {
-            do{
+            left[i] = arr[low + i];
+        }
+        
+        for(int i=0;i<n2;i++)
+        {
+            right[i] = arr[mid+i+1];
+        }
+        
+        int i=0,j=0,k=low;
+        
+        while(i < n1 && j < n2)
+        {
+            if(left[i] <= right[j])
+            {
+                arr[k] = left[i];
                 i++;
-            }while(arr[i] < pivot);
-                do{
-                    j--;
-                }while(arr[j] > pivot);
-                    if(i >= j)
-                        return j;
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+                k++;
+            }
+            
+            else{
+                arr[k] = right[j];
+                k++;
+                j++;
+            }
+        }
+        
+        while(i < n1)
+        {
+            arr[k] = left[i];
+            i++;
+            k++;
+        }
+        
+        while(j < n2)
+        {
+            arr[k] = right[j];
+            j++;k++;
         }
     }
 }
