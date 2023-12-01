@@ -82,7 +82,7 @@ class Solution {
     public static boolean detectLoop(Node head){
         // Add code here
         Node slow = head;
-        Node fast = head;
+        Node fast = head;                    //floyd's cycle finding algorithm
         
         while(slow != null && fast != null && fast.next != null)
         {
