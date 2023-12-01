@@ -81,8 +81,9 @@ class Solution {
     //Function to check if the linked list has a loop.
     public static boolean detectLoop(Node head){
         // Add code here
+        
         Node slow = head;
-        Node fast = head;                    //floyd's cycle finding algorithm
+        Node fast = head;
         
         while(slow != null && fast != null && fast.next != null)
         {
