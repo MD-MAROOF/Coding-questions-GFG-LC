@@ -11,18 +11,35 @@
  */
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ArrayList<ListNode> arr1 = new ArrayList<>();
+        ArrayList<ListNode> arr2 = new ArrayList<>();
         
         while(headA != null)
         {
-            ListNode b = headB;
-            while(b != null)
-            {
-                if(b == headA)
-                    return b;
-                    
-                b = b.next;
-            }
+            arr1.add(headA);
             headA = headA.next;
+        }
+        
+        while(headB != null)
+        {
+            arr2.add(headB);
+            headB = headB.next;
+        }
+        
+        int n = Math.min(arr1.size(),arr2.size());
+        
+        for(int i=0;i<n;i++)
+        {
+            if(arr1.size() < arr2.size())
+            {
+                if(arr2.contains(arr1.get(i)))
+                    return arr1.get(i);
+            }
+                else{
+                    if(arr1.contains(arr2.get(i)))
+                        return arr2.get(i);
+                }
+            
         }
         
         return null;
