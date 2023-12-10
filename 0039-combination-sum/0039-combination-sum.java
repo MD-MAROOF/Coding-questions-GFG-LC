@@ -1,6 +1,5 @@
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-      //  List<List<Integer>> ans = new ArrayList<>();
         
         ArrayList<Integer> arr = new ArrayList<>();
         for(int i=0;i<candidates.length;i++)
@@ -12,15 +11,16 @@ class Solution {
     }
     
     List<List<Integer>> ans = new ArrayList<>();
-    public void solve(int i, List<Integer> arr, List<Integer> temp, int target)
+    public void solve(int i, List<Integer> arr, List<Integer> temp,int target)
     {
-        if(target == 0){
+        if(target == 0)
+        {
             ans.add(new ArrayList<>(temp));
             return;
         }
         
         if(target < 0)
-            return;
+            return; 
         
         if(i == arr.size())
             return;
@@ -29,6 +29,5 @@ class Solution {
         temp.add(arr.get(i));
         solve(i,arr,temp,target-arr.get(i));
         temp.remove(temp.size()-1);
-        
     }
 }
