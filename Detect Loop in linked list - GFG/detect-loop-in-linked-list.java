@@ -81,7 +81,6 @@ class Solution {
     //Function to check if the linked list has a loop.
     public static boolean detectLoop(Node head){
         // Add code here
-        
         Node slow = head;
         Node fast = head;
         
@@ -92,8 +91,8 @@ class Solution {
             
             if(slow == fast)
             return true;
-            
         }
+        
         return false;
     }
 }
