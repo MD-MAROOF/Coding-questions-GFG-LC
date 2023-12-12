@@ -1,13 +1,14 @@
 class Solution {
     public List<String> generateParenthesis(int n) {
-        
+     
         ArrayList<String> ans = new ArrayList<>();
         
-        function(ans,n,0,0,"");
+        String str = "";
+        function(ans, n, 0,0,str);
         return ans;
     }
     
-    void function(List<String> ans, int n, int open, int close, String str)
+    void function(ArrayList<String> ans, int n, int open, int close, String str)
     {
         if(str.length() == n*2)
         {
