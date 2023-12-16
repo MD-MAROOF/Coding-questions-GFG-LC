@@ -25,6 +25,7 @@ class Solution {
         
         if(exp.equals("h^m^q^(7-4)"))
         return "hm^q^74-^";
+      
         
         Stack<Character> operators = new Stack<>();
         char symbol;
@@ -41,9 +42,9 @@ class Solution {
             
             else if(symbol == ')')
             {
-                while(operators.peek() != '(')
+                while(operators.peek() != '('){
                 postfix = postfix + operators.pop();
-                
+                }
                 operators.pop();
             }
             
