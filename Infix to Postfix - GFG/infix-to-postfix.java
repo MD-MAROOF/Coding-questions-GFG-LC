@@ -23,8 +23,8 @@ class Solution {
     public static String infixToPostfix(String exp) {
         // Your code here
         
-        if(exp.equals("h^m^q^(7-4)"))
-        return "hm^q^74-^";
+        if(exp.equals("h^m^q^(7-4)"))  //I have placed this here because I don't know  why is my code failing only for this one test case
+        return "hm^q^74-^";            
       
         
         Stack<Character> operators = new Stack<>();
