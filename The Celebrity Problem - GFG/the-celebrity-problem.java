@@ -36,26 +36,24 @@ class Solution
     int celebrity(int M[][], int n)
     {
     	// code here 
-    	
     	Stack<Integer> stk = new Stack<>();
     	
     	for(int i=0;i<n;i++)
-    	{
-    	    stk.push(i);
-    	}
+    	stk.push(i);
     	
     	while(stk.size() > 1)
     	{
-    	     int a = stk.peek();
-    	     stk.pop();
-    	     
-    	     int b = stk.peek();
-    	     stk.pop();
-    	     
-    	     if(knows(M,a,b,n))
-    	     stk.push(b);
-    	     else 
-    	     stk.push(a);
+    	    int a = stk.peek();
+    	    stk.pop();
+    	    
+    	    int b = stk.peek();
+    	    stk.pop();
+    	    
+    	    if(knows(M,a,b,n))
+    	        stk.push(b);
+    	    else
+    	    stk.push(a);
+    	    
     	}
     	
     	int candidate = stk.peek();
@@ -72,7 +70,7 @@ class Solution
     	if(zeroCount == n)
     	rowCheck = true;
     	
-    	boolean Colcheck = false;
+    	boolean colCheck = false;
     	int oneCount = 0;
     	
     	for(int i=0;i<n;i++)
@@ -82,21 +80,21 @@ class Solution
     	}
     	
     	if(oneCount == n-1)
-    	Colcheck = true;
+    	colCheck = true;
     	
-    	if(rowCheck == true && Colcheck == true)
+    	if(rowCheck == true && colCheck == true)
     	return candidate;
+    	
     	else
     	return -1;
+    	
     }
     
     public boolean knows(int[][] M, int a, int b, int n)
     {
         if(M[a][b] == 1)
         return true;
-        
         else
         return false;
-    
     }
 }
