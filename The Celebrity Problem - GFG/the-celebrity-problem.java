@@ -43,17 +43,16 @@ class Solution
     	
     	while(stk.size() > 1)
     	{
-    	    int a = stk.peek();
-    	    stk.pop();
-    	    
-    	    int b = stk.peek();
-    	    stk.pop();
-    	    
-    	    if(knows(M,a,b,n))
-    	        stk.push(b);
-    	    else
-    	    stk.push(a);
-    	    
+    	     int a = stk.peek();
+    	     stk.pop();
+    	     
+    	     int b = stk.peek();
+    	     stk.pop();
+    	     
+    	     if(knows(M,a,b,n))
+    	     stk.push(b);
+    	     else
+    	     stk.push(a);
     	}
     	
     	int candidate = stk.peek();
@@ -82,15 +81,13 @@ class Solution
     	if(oneCount == n-1)
     	colCheck = true;
     	
-    	if(rowCheck == true && colCheck == true)
+    	if(rowCheck && colCheck)
     	return candidate;
-    	
     	else
     	return -1;
-    	
     }
     
-    public boolean knows(int[][] M, int a, int b, int n)
+    public boolean knows(int[][] M, int a,int b, int n)
     {
         if(M[a][b] == 1)
         return true;
