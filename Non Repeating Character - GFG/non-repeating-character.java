@@ -37,20 +37,20 @@ class Solution
     static char nonrepeatingCharacter(String S)
     {
         //Your code here
-        LinkedHashMap<Character, Integer> map = new LinkedHashMap<>();
+        LinkedHashMap<Character,Integer> map = new LinkedHashMap<>();
         
         for(int i=0;i<S.length();i++)
         {
             if(map.containsKey(S.charAt(i)))
-            map.put(S.charAt(i),map.get(S.charAt(i))+1);
+            map.put(S.charAt(i), map.get(S.charAt(i))+1);
             else
             map.put(S.charAt(i),1);
         }
         
-        for(Map.Entry<Character,Integer> entry : map.entrySet())
+        for(Map.Entry<Character, Integer> entry : map.entrySet())
         {
-             if(entry.getValue() == 1)
-             return entry.getKey();
+            if(entry.getValue() == 1)
+            return entry.getKey();
         }
         
         return '$';
