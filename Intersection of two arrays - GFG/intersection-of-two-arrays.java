@@ -54,20 +54,21 @@ class Solution {
     // the intersection of two arrays.
     public static int NumberofElementsInIntersection(int a[], int b[], int n, int m) {
         // Your code here
-        HashSet<Integer>  hs = new HashSet<>();
-        HashSet<Integer> intersect = new HashSet<>();
+        
+        HashSet<Integer> hs = new HashSet<>();
+        
+       HashSet<Integer> intersect = new HashSet<>();
         
         for(int i=0;i<a.length;i++)
-        {
-            hs.add(a[i]);
-        }
+        hs.add(a[i]);
+        
+        int count = 0;
         
         for(int i=0;i<b.length;i++)
         {
             if(hs.contains(b[i]))
             intersect.add(b[i]);
         }
-        
         return intersect.size();
     }
 };
