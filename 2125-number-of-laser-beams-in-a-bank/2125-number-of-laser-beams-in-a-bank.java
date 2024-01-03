@@ -1,7 +1,7 @@
 class Solution {
     public int numberOfBeams(String[] bank) {
         
-    
+    //I have solved this question by looking at hints
         ArrayList<Integer> list = new ArrayList<>();
         
         for(int i=0;i<bank.length;i++)
