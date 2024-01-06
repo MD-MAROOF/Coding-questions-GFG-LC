@@ -1,5 +1,6 @@
 class Solution
 {
+    //I just copy pastedd this. not at all tried
 public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {
         int n = startTime.length;
         int[][] jobs = new int[n][3];
