@@ -1,30 +1,26 @@
 class Solution {
     public void nextPermutation(int[] nums) {
         
-        
-        if(nums.length == 1)
-            return;
-        
-        int idx1 = Integer.MIN_VALUE;
+        int idx1= Integer.MIN_VALUE;
         
         for(int i=nums.length-2;i>=0;i--)
         {
-            if(nums[i] < nums[i+1]){
+            if(nums[i] < nums[i+1])
+            {
                 idx1 = i;
                 break;
             }
         }
         
         if(idx1 < 0)
-        {
             reverse(nums,0,nums.length-1);
-        }
-        
         else{
             int idx2 = 0;
+            
             for(int i=nums.length-1;i>=0;i--)
             {
-                if(nums[i] > nums[idx1]){
+                if(nums[i] > nums[idx1])
+                {
                     idx2 = i;
                     break;
                 }
