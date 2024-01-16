@@ -1,6 +1,7 @@
 class Solution {
     public boolean checkValidString(String s) {
-     
+        
+        
         Stack<Integer> open_braces = new Stack<>();
         Stack<Integer> star = new Stack<>();
         
@@ -8,7 +9,6 @@ class Solution {
         {
             if(s.charAt(i) == '(')
                 open_braces.push(i);
-            
             else if(s.charAt(i) == '*')
                 star.push(i);
             
@@ -24,7 +24,7 @@ class Solution {
             }
         }
         
-        while(open_braces.size()!= 0)
+        while(open_braces.size()!=0)
         {
             if(star.size() == 0)
                 return false;
@@ -34,12 +34,11 @@ class Solution {
                 star.pop();
                 open_braces.pop();
             }
-            else{
+            
+            else
                 return false;
-            }
         }
         
         return true;
-            
     }
 }
