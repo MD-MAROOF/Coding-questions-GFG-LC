@@ -22,7 +22,7 @@ class Solution {
             next = curr.next.next;
             head = curr.next;
             head.next = curr;
-            curr = head.next;
+         //   curr = head.next;
             curr.next = next;
         }
         
