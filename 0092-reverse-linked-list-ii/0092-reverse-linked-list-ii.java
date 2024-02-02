@@ -22,8 +22,7 @@ class Solution {
         
         ListNode start = curr;
         ListNode end = null;
-        
-        for(int i=left;i <= right;i++)
+        for(int i=left; i<=right;i++)
         {
             ListNode next = curr.next;
             curr.next = end;
@@ -34,8 +33,10 @@ class Solution {
         start.next = curr;
         
         if(prev != null)
+        {
             prev.next = end;
-        else 
+        }
+        else
             head = end;
         
         return head;
