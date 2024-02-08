@@ -23,35 +23,35 @@ class Solution {
             return ans;
         
         queue.offer(root);
-        int j = 0;
+        int j=0;
+        
         while(!queue.isEmpty())
         {
-            int n = queue.size();
-            List<Integer> subList = new LinkedList<Integer>();
+           int n = queue.size();
+            List<Integer> subList = new ArrayList<>();
             
             for(int i=0;i<n;i++)
             {
-                if(queue.peek().left != null)
+
+                if(queue.peek().left  != null)
                     queue.offer(queue.peek().left);
                 
                 if(queue.peek().right != null)
                     queue.offer(queue.peek().right);
                 
                 subList.add(queue.poll().val);
-             
             }
             
-            if((j&1)==0){
-        ans.add(subList);
-      }
-      else{
-        Collections.reverse(subList);
-        ans.add(subList);
-      }
-      j++;
+            if((j&1) == 0)
+                ans.add(subList);
+            else
+            {
+                Collections.reverse(subList);
+                ans.add(subList);
+            }
             
+            j++;
         }
-        
         return ans;
     }
 }
