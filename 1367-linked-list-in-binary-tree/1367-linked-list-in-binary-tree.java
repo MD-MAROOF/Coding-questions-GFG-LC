@@ -32,23 +32,24 @@ class Solution {
         if(root == null)
             return false;
         
-       if(dfs(head,root))
-           return true;
+        if(dfs(head,root))   //This checks if the entire list is present in the tree or not
+            return true;
         
         return isSubPath(head,root.left) || isSubPath(head,root.right);
+        
     }
     
-    boolean dfs(ListNode head, TreeNode root)
+    boolean dfs(ListNode head, TreeNode node)
     {
         if(head == null)
             return true;
         
-        if(root == null)
+        if(node == null)
             return false;
         
-        if(head.val != root.val)
+        if(node.val != head.val)
             return false;
         
-        return dfs(head.next,root.left) || dfs(head.next,root.right);
+        return dfs(head.next,node.left) || dfs(head.next,node.right);
     }
 }
