@@ -28,17 +28,17 @@ class Solution {
             
             for(int i=0;i<size;i++)
             {
-               TreeNode curr = queue.poll();
+             
                 if(i == 0)
-                    last = curr.val;
+                    last = queue.peek().val;
                 
-                if(curr.left != null)
-                    queue.add(curr.left);
+                if(queue.peek().left != null)
+                    queue.add(queue.peek().left);
                 
-                if(curr.right != null)
-                    queue.add(curr.right);
+                if(queue.peek().right != null)
+                    queue.add(queue.peek().right);
                 
-                
+                queue.poll();
             }
         }
         
