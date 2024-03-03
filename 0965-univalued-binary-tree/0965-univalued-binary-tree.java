@@ -23,16 +23,17 @@ class Solution {
         queue.offer(root);
         while(!queue.isEmpty())
         {
-            TreeNode node = queue.poll();
             
-            if(node.val != uni_value)
+            if(queue.peek().val != uni_value)
                 return false;
             
-            if(node.left != null)
-                queue.add(node.left);
+            if(queue.peek().left != null)
+                queue.add(queue.peek().left);
             
-            if(node.right != null)
-                queue.add(node.right);
+            if(queue.peek().right != null)
+                queue.add(queue.peek().right);
+            
+            queue.poll();
         }
         
         return true;
