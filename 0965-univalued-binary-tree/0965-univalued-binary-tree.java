@@ -16,26 +16,20 @@
 class Solution {
     public boolean isUnivalTree(TreeNode root) {
         
-        int uni_value = root.val;
-        Queue<TreeNode> queue = new LinkedList<>();
+        if(root == null)
+            return true;
         
+        return check(root,root.val);
+    }
+    
+    boolean check(TreeNode root, int num)
+    {
+        if(root == null)
+            return true;
         
-        queue.offer(root);
-        while(!queue.isEmpty())
-        {
-            
-            if(queue.peek().val != uni_value)
-                return false;
-            
-            if(queue.peek().left != null)
-                queue.add(queue.peek().left);
-            
-            if(queue.peek().right != null)
-                queue.add(queue.peek().right);
-            
-            queue.poll();
-        }
+        if(root.val != num)
+            return false;
         
-        return true;
+        return check(root.left,num) && check(root.right,num);
     }
 }
