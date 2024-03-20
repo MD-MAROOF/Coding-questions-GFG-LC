@@ -11,39 +11,32 @@
 class Solution {
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
         
-        ListNode end = list1;
+        ListNode temp = list1;
         
-        int b_count = 1;
-        
-        while(b_count <= b+1)
-        {
-            b_count++;
-            end = end.next;
-        }
-        
-        int a_count = 0;
-        ListNode begin = list1;
-        
-        while(a_count < a-1)
-        {
-            a_count++;
-            begin = begin.next;
-        }
-        
-      begin.next = null;
-        begin.next = list2;
-        
-        
-     ListNode temp = list2;
-        while(temp.next != null)
+        for(int i=0;i<a-1;i++)
         {
             temp = temp.next;
         }
         
-        temp.next = end;
+       ListNode list2_next = list1;
+        
+        for(int i=0;i<=b;i++)
+        {
+            list2_next = list2_next.next;
+        }
+        
+        temp.next = null;
+        temp.next = list2;
+        
+        ListNode temp1 = list2;
+        while(temp1.next != null)
+        {
+            temp1 = temp1.next;
+        }
+        
+    //    list2_next.next = temp1;
+        temp1.next = list2_next;
         
         return list1;
-        
-        
     }
 }
