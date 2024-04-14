@@ -45,7 +45,6 @@ class Solution {
             }
         }
         
-       
         while(!queue.isEmpty())
         {
             TreeNode temp = queue.poll();
